@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.img{
+				width: 100px;
+				height: 100px;
+				position: absolute;
+				margin-left: -25px;
+				margin-top: -25px;
+				border-radius: 50%;
+				transition: all 1s;
+			}
+		</style>
+	</head>
+	<body id="bd">
+		<script type="text/javascript">
+			document.onmousemove=function(e){//只要一移动就会触发
+				e=e||window.event;
+				var img=new Image();
+				img.src="images/a1_34.png";
+				img.className="img";
+				var top=e.clientY;
+				var left=e.clientX;
+				img.style.top=top+"px";
+				img.style.left=left+"px";
+				
+				
+				
+				bd.appendChild(img);
+				
+				img.onload=function(){//图片一定要先放在页面之上再执行过渡
+					img.style.transform="scale(0)";
+					img.style.opacity="0";
+				}
+			}
+			
+			setInterval(function(){
+				var imgs=document.getElementsByTagName("img");
+				for(var i=0;i<imgs.length-20;i++){
+					bd.removeChild(imgs[i]);
+				}
+			},100);
+		</script>
+	</body>
+</html>

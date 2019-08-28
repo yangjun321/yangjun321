@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+  
+  var a={"name":"yj","id":101,"salary":15222};
+Object.defineProperty(a,"id",{
+  value:103,
+  writable:false,//改不到元素
+  enumerable:false,//禁止修改
+  configurable:false//禁止删除 修改
+})
+console.log(a);
+  </script>
+
+<!-- 模板字符串 -->
+<!-- <script>
+var a=100;
+var b=5;
+console.log(`单价为${100},数量为${5},总价为${a*b}`);
+
+</script> -->
+
+</body>
+</html>

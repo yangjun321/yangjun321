@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  ul{
+    overflow: hidden;
+  }
+  li{
+    float: left;
+    width: 100px;
+   line-height:50px;
+    background-color: rgb(197, 40, 40);
+    list-style: none;
+    text-align: center;
+    color: #ffff;
+    cursor: pointer;
+  }
+  li.active{
+    background-color: rgb(109, 175, 93);
+  }
+  .a1{
+    width: 400px;
+    height: 100px;
+    position: relative;
+  }
+  .a1>div{
+position: absolute;
+top: 0px;
+left: 0px;
+opacity: 0;
+  }
+  .a1 .active{
+    background-color: rgb(109, 175, 93);
+    opacity: 1;
+  }
+  </style>
+</head>
+<body>
+  <ul>
+    <li cc="0"; class="active">套餐一</li>
+    <li cc="1";>套餐二</li>
+    <li cc="2";>套餐三</li>
+  </ul>
+  <div class="a1">
+    <div class="active">11111111Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam vitae ratione animi, atque quia accusamus dicta rerum totam inventore ea excepturi expedita vel reprehenderit unde debitis omnis maiores odio praesentium?</div>
+    <div>2222222Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam vitae ratione animi, atque quia accusamus dicta rerum totam inventore ea excepturi expedita vel reprehenderit unde debitis omnis maiores odio praesentium?</div>
+    <div>33333333Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam vitae ratione animi, atque quia accusamus dicta rerum totam inventore ea excepturi expedita vel reprehenderit unde debitis omnis maiores odio praesentium?</div>
+
+  </div>
+
+
+
+  <script>
+  var lis=document.getElementsByTagName("li");
+  var divs=document.querySelectorAll(".a1>div");
+  for(i=0;i<lis.length;i++){
+ lis[i].onclick=function(){
+  for(i=0;i<lis.length;i++){
+    lis[i].className="";
+    divs[i].className="";
+  }
+this.className="active";
+var i=this.getAttribute("cc");
+divs[i].className="active";
+}
+  }
+  
+  </script>
+</body>
+</html>

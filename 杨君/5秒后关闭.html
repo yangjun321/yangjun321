@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+var a=window.open("","","width=300,height=300");
+a.onmouseover=function(){
+  var z=parseInt(Math.random()*(window.innerWidth-300+1));
+  var y=parseInt(Math.random()*(window.innerHeight-300+1)+70);
+  a.moveTo(z,y);
+}
+
+</script>
+
+
+
+
+
+<!-- 
+  <p class="p">5秒后自动关闭网页</p>
+  <script type="text/javascript">
+  var p=document.querySelector(".p");
+    function a() {
+      var s = parseInt(p.innerHTML);
+      s--;
+      if (s == 0) {
+        window.close();
+      }
+      p.innerHTML = s + "秒后自动关闭";
+    }
+    timer = setInterval(function () {
+      a();
+    }, 1000)
+  
+  </script> -->
+</body>
+
+</html>

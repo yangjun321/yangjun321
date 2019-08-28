@@ -1,0 +1,190 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .a1 {
+      position: relative;
+      margin-left: 500px;
+      margin-top: 50px;
+      border: 1px solid #000;
+      width: 500px;
+      height: 500px;
+    }
+
+    .a1 img {
+      width: 500px;
+      height: 500px;
+      position: absolute;
+      opacity: 0;
+      transition: all 1s;
+
+    }
+
+    button {
+      position: absolute;
+      border: none;
+      outline: none;
+    }
+
+    button:nth-of-type(1) {
+      width: 40px;
+      height: 40px;
+      border-radius: 30px;
+      color: #000;
+      font-size: 18px;
+      top: 50%;
+      left: 20px;
+      margin-top: -20px;
+    }
+
+    img.active {
+      opacity: 1;
+    }
+
+
+    button:hover {
+      background-color: rgb(63, 170, 90);
+      color: #000;
+    }
+
+    button:nth-of-type(2) {
+      width: 40px;
+      height: 40px;
+      border-radius: 30px;
+      color: #000;
+      font-size: 18px;
+      top: 50%;
+      right: 20px;
+      margin-top: -20px;
+    }
+
+    ul {
+      position: absolute;
+      top: 90%;
+      right: 50%;
+      margin-top: -5px;
+      margin-right: -5px;
+    }
+
+    li {
+      width: 10px;
+      height: 10px;
+      background-color: rgb(28, 223, 213);
+      list-style: none;
+      border-radius: 6px;
+      float: left;
+      margin-right: 5px;
+    }
+
+    li.active {
+      background-color: rgb(219, 68, 68);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="a1" id="carousel1">
+    <img src="./images/a4_09.png" alt="" class="active">
+    <img src="./images/a1_15.png" alt="">
+    <img src="./images/a4_11.png" alt="">
+<button><</button>
+<button>></button>
+    <ul>
+      <li hh="0"; class="active"></li>
+      <li hh="0";></li>
+      <li hh="0";></li>
+    </ul>
+  </div>
+  <script>
+ 
+ var carousel={
+				btns: document.getElementsByTagName("button"),
+				imgs: document.getElementsByTagName("img"),
+				lis: document.getElementsByTagName("li"),
+				j: 0,
+				state: null,
+				init:function(){
+					this.aa();
+					this.bb();
+          this.cc();
+					this.dd();
+				},
+				aa:function(){
+					for(var i = 0; i < this.btns.length; i++) {
+						this.btns[i].onclick = function() {
+							if(this.innerHTML == "&gt;") {
+								carousel.btn();
+							}else{
+								carousel.btn(-1);
+							}
+						}
+					}
+				},
+				btn:function(){
+					if(arguments[0]!==undefined){
+						this.j+=arguments[0];
+						if(this.j == -1){
+							this.j = 2;
+						}
+					}
+					if(arguments[1]!==undefined){
+						this.j=parseInt(arguments[1]);
+					}
+					if(arguments.length==0){
+						this.j++;
+						if(this.j == 3){
+							this.j = 0;
+						}
+					}
+					for(var i = 0; i < this.imgs.length; i++) {
+						this.imgs[i].className = "";
+						this.lis[i].className = "";
+					}
+					this.imgs[this.j].className = "active";
+					this.lis[this.j].className = "active";
+				},
+				bb:function(){
+					for(var i = 0; i < this.lis.length; i++) {
+						this.lis[i].onclick=function(){
+							carousel.btn(undefined,this.getAttribute("hh"));
+						}
+					}
+				},
+				cc:function(){
+					if(this.state===null){
+        
+            
+						this.state=setInterval(function(){
+							carousel.btn();
+						},1000);
+					}else{
+						clearInterval(this.state);
+						this.state=null;
+					}
+				},
+				dd:function(){
+					carousel1.onmouseover=function(){
+          
+            
+						carousel.cc();
+					}
+					carousel1.onmouseout=function(){
+						carousel.cc();
+					}
+				}
+			}
+			
+			window.onload=function(){
+				carousel.init();
+			}
+
+  </script>
+</body>
+
+</html>

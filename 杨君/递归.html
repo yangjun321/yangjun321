@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<div id="aa">
+  <ul>
+    <li>猫</li>
+    <li>狗</li>
+    <li>猴子</li>
+    <li>兔</li>
+    <li>大象</li>
+    <li>老虎</li>
+  </ul>
+  <ul>
+    <li>人
+      <ul>
+        <li>眼睛</li>
+        <li>耳朵</li>
+        <li>鼻子</li>
+        <li>嘴巴</li>
+        <li>心</li>
+        <li>肺</li>
+        <li>肝</li>
+      </ul>
+    </li>
+  </ul>
+
+</div>
+<script>
+function f1(hh){
+for(var i=0;i<hh.children.length;i++){
+      f1(hh.children[i]);
+}
+}
+f1(aa);
+
+</script>
+</body>
+</html>
